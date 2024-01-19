@@ -4,5 +4,5 @@ A place to track your fitness journey while exploring other fitness facilities a
 
 ## Run the Project 
 
-Locally 
-Live 
+1. Locally
+2. Live
