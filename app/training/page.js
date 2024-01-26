@@ -1,3 +1,4 @@
+import Header from "../../components/common/Header";
 export default function Page() {
-  return <h1>This is my Training Page</h1>;
+  return <Header />;
 }
