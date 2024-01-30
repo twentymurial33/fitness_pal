@@ -2,7 +2,7 @@ import React from "react";
 import Header from "../../components/common/Header";
 
 async function getData() {
-  const res = await fetch("/api/training/");
+  const res = await fetch("/api/training");
 
   if (!res.ok) {
     throw new Error("Failed to fetch data");
@@ -13,7 +13,6 @@ async function getData() {
 
 export default async function Page(activityData) {
   const data = await getData();
-
   return (
     <div>
       <Header />

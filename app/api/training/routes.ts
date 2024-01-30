@@ -1,4 +1,7 @@
-function handler(res, req) {
+import { NextResponse,NextRequest } from "next/server";
+
+
+export async function GET(request:NextRequest){
   const activityData = [
     {
       activityKind: "running",
@@ -21,7 +24,10 @@ function handler(res, req) {
       value: "5",
     },
   ];
-  res.status(200).json({ activityData });
+ return NextResponse.json(activityData)
 }
 
-export default handler;
+export async function POST(){
+
+  return NextResponse.json()
+}
