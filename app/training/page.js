@@ -1,29 +1,46 @@
-import React from "react";
+"use client";
+import React, { useState, useEffect } from "react";
 import Header from "../../components/common/Header";
+import { StyledHeader } from "./style";
 
 async function getData() {
-  const res = await fetch("/api/training");
-
+  const res = await fetch("http://localhost:3000/api/training");
   if (!res.ok) {
     throw new Error("Failed to fetch data");
   }
-
-  return res.json();
+  const data = await res.json();
+  return data;
 }
 
-export default async function Page(activityData) {
-  const data = await getData();
+export default function Page() {
+  const [activityData, setActivityData] = useState("");
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const data = await getData();
+        setActivityData(data);
+        console.log(data);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
+    fetchData();
+  }, []);
+
   return (
-    <div>
+    <>
       <Header />
-      <h1>Activity Data</h1>
+      <StyledHeader>Activity Data</StyledHeader>
       <ul>
-        {activityData.map((activity, index) => {
+        {Object.values(activityData).map((activity, index) => (
           <li key={index}>
-            {activity.activityKind}: {activity.value} {activity.unit}
-          </li>;
-        })}
+            {activity.activityKind}
+            <li>{activity.unit}</li>
+            <li>{activity.value}</li>
+          </li>
+        ))}
       </ul>
-    </div>
+    </>
   );
 }

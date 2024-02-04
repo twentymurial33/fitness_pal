@@ -1,6 +1,6 @@
 import { NextResponse,NextRequest } from "next/server";
 
-
+//GET Request
 export async function GET(request:NextRequest){
   const activityData = [
     {
@@ -27,7 +27,18 @@ export async function GET(request:NextRequest){
  return NextResponse.json(activityData)
 }
 
-export async function POST(){
-
+//Post Request
+export async function POST(request:NextRequest,NextResponse){
+  const data= await request.json()
+    console.log(data)
   return NextResponse.json()
+
 }
+
+//Delete Request
+
+
+
+
+
+//Update Request
