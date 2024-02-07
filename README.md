@@ -1,6 +1,7 @@
 # Fitness Pal 
 
 A place to track your fitness journey while exploring other fitness facilities and their regiment in your zip code and incorporating them 
+This project is developed using Consumer-Driven Contracts: A Service Evolution  Pattern 
 
 ## Run the Project 
 
