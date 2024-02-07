@@ -4,5 +4,12 @@ A place to track your fitness journey while exploring other fitness facilities a
 
 ## Run the Project 
 
-1. Locally
-2. Live
+1. Locally-
+2. Deployed -
+
+## Tech Stack
+
+1. NextJs
+2. Prisma
+3. PostgreSQL
+   
