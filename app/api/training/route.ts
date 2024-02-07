@@ -1,9 +1,10 @@
+import { request } from "http";
 import { NextResponse,NextRequest } from "next/server";
 
-//GET Request
 export async function GET(request:NextRequest){
-  const activityData = [
-    {
+try{
+  const activityData=[
+       {
       activityKind: "running",
       unit: "miles",
       value: "10",
@@ -23,22 +24,49 @@ export async function GET(request:NextRequest){
       unit: "miles",
       value: "5",
     },
-  ];
+
+  ]
  return NextResponse.json(activityData)
+} catch(error){
+ console.error("This is an error message")
+}
+ 
 }
 
-//Post Request
-export async function POST(request:NextRequest,NextResponse){
-  const data= await request.json()
-    console.log(data)
-  return NextResponse.json()
+export async function POST(request:NextRequest){
+   try{
+   const{activityKind,unit,value} = await request.json();
+   const newActivity={
+    activityKind,
+    unit,
+    value
+   }
+    return NextResponse.json({
+      message:"Data Received Successfully",
+      data: newActivity,
+    })
+}catch(error){
+  console.error(error)
+   }
+}
+
+export async function DELETE(request:NextRequest){
+  try{
+  const {id} = await request.json()
+  return 
+  }catch(error){
+   console.error(error)
+  }
+  
+}
+
+
+export async function PUT(){
+  try{
+ return 
+  }catch{
+
+  }
 
 }
 
-//Delete Request
-
-
-
-
-
-//Update Request
