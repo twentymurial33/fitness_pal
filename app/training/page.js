@@ -1,7 +1,8 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import Header from "../../components/common/Header";
-import { StyledHeader } from "./style";
+import { ReactTyped } from "react-typed";
+import { StyledHeader, StyledTable } from "./style";
 
 async function getData() {
   const res = await fetch("http://localhost:3000/api/training");
@@ -31,16 +32,33 @@ export default function Page() {
   return (
     <>
       <Header />
-      <StyledHeader>Activity Data</StyledHeader>
-      <ul>
-        {Object.values(activityData).map((activity, index) => (
-          <li key={index}>
-            {activity.activityKind}
-            <li>{activity.unit}</li>
-            <li>{activity.value}</li>
-          </li>
-        ))}
-      </ul>
+      <StyledHeader>
+        <ReactTyped
+          className="typed-text"
+          strings={["Train Like an Athlete", "Built for Everyone"]}
+          typeSpeed={40}
+          backSpeed={60}
+          loop
+        />
+      </StyledHeader>
+      <StyledTable>
+        <thead>
+          <tr>
+            <th>Activity Kind</th>
+            <th>Unit</th>
+            <th>Value</th>
+          </tr>
+        </thead>
+        <tbody>
+          {Object.values(activityData).map((activity, index) => (
+            <tr key={index}>
+              <td>{activity.activityKind}</td>
+              <td>{activity.unit}</td>
+              <td>{activity.value}</td>
+            </tr>
+          ))}
+        </tbody>
+      </StyledTable>
     </>
   );
 }

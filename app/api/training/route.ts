@@ -37,11 +37,11 @@ export async function GET(request: NextRequest) {
 
 export async function POST(request: NextRequest) {
   try {
-    const newActivity = {
-      activityKind: "someActivity",
-      unit: "someUnit",
-      value: 42
-    };
+   const newActivity = {
+  activityKind: "someActivity",
+   unit: "someUnit",
+     value: 42,
+   };
     return NextResponse.json(newActivity);
   } catch (error) {
     console.error(error);
@@ -50,7 +50,6 @@ export async function POST(request: NextRequest) {
     });
   }
 }
-
 
 
 export async function DELETE(request: NextRequest) {
@@ -74,17 +73,20 @@ export async function DELETE(request: NextRequest) {
   }
 }
 
-export async function PUT(request:NextRequest){
-  try{
-   const{id, updatedActivity}=await request.json()
-   return NextResponse.json({
-    id,
-     updatedActivity
-   })
-  }catch(error){
-    console.error(error)
-  return NextResponse.json({
-      error:"Internal Server Error"
-  })
+
+export async function PUT(request: NextRequest) {
+  const newActivity = {
+  activityKind: "someActivity",
+  unit: "someUnit",
+    value: 42,
+   };
+  try {
+    const updatedActivity = { ...newActivity };
+    return NextResponse.json(updatedActivity);
+  } catch (error) {
+    console.error(error);
+    return NextResponse.json({
+      error: "Internal Server Error",
+    });
   }
 }
