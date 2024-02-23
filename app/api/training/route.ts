@@ -38,9 +38,12 @@ export async function GET(request: NextRequest) {
 export async function POST(request: NextRequest) {
   try {
    const newActivity = {
-  activityKind: "someActivity",
-   unit: "someUnit",
+    id:1,
+    activityKind: "someActivity",
+    unit: "someUnit",
      value: 42,
+     timeStamp:10-24-2016,
+     
    };
     return NextResponse.json(newActivity);
   } catch (error) {
@@ -73,20 +76,20 @@ export async function DELETE(request: NextRequest) {
   }
 }
 
+//dont need the put request
+// export async function PUT(request: NextRequest){
+//    const newActivity = {
+//     id:1,
+//   activityKind: "someActivity",
+//   unit: "someUnit",
+//     value: 42,
+//    };
 
-export async function PUT(request: NextRequest) {
-  const newActivity = {
-  activityKind: "someActivity",
-  unit: "someUnit",
-    value: 42,
-   };
-  try {
-    const updatedActivity = { ...newActivity };
-    return NextResponse.json(updatedActivity);
-  } catch (error) {
-    console.error(error);
-    return NextResponse.json({
-      error: "Internal Server Error",
-    });
-  }
-}
+//   for (var [key,value]of Object.entries()){
+//     //generate a SQL statement for the key/value formation
+//     var sql={
+//       UPDATE newActivity,SET(), WHERE id=$id 
+//     }
+
+//   }
+// }
