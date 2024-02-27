@@ -14,7 +14,7 @@ const drawerWidth = 240;
 
 export default function ClippedDrawer() {
   return (
-    <Box sx={{ display: "flex", marginTop: "-20px" }}>
+    <Box sx={{ display: "flex" }} style={{ backgroundColor: "pink" }}>
       <Drawer
         variant="permanent"
         sx={{
@@ -27,9 +27,9 @@ export default function ClippedDrawer() {
         }}
       >
         <Toolbar />
-        <Box sx={{ overflow: "auto" }}>
+        <Box sx={{ overflow: "auto" }} style={{ backgroundColor: "pink" }}>
           <List>
-            {["Inbox", "Starred", "Send email", "Drafts"].map((text, index) => (
+            {["Contact"].map((text, index) => (
               <ListItem key={text} disablePadding>
                 <ListItemButton>
                   <ListItemIcon>
