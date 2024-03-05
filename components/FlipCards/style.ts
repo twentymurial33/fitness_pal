@@ -1,8 +1,14 @@
 import styled from "styled-components"
 
 export const StyledFlipCard= styled.div`
-background-color:"pink";
-width:100px;
-height:200px;
+width:80%;
+height:300px;
+background-color:grey;
+margin-left:240px;
+`
+
+export const StyledText= styled.h1`
+text-align:center;
+color:white;
 
 `

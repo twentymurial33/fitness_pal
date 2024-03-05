@@ -7,7 +7,7 @@ import ImageListItemBar from "@mui/material/ImageListItemBar";
 
 export default function TitlebarBelowMasonryImageList() {
   return (
-    <div style={{ marginTop: "100px" }}>
+    <div style={{ marginTop: "20px" }}>
       <StyledHeader>
         <ReactTyped
           className="typed-text"
@@ -20,8 +20,8 @@ export default function TitlebarBelowMasonryImageList() {
 
       <div
         style={{
-          marginLeft: "400px",
-          marginTop: "200px",
+          marginLeft: "240px",
+          marginTop: "90px",
         }}
       >
         <Box>

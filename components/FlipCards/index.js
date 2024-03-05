@@ -1,18 +1,18 @@
-import React, { useState } from "react";
-import { StyledFlipCard } from "./style";
+import { StyledFlipCard, StyledText } from "./style";
+import Card from "../card/card";
 
-const FlipCard = ({ frontContent, backContent }) => {
-  const [isFlipped, setIsFlipped] = useState(false);
-
-  const handleFlip = () => {
-    setIsFlipped(!isFlipped);
-  };
+function FlipCards() {
+  const date = new Date();
+  const formattedDate = `${date.toLocaleDateString()} ${
+    date.toLocaleTimeString
+  }`;
   return (
-    <StyledFlipCard onClick={handleFlip}>
-      <StyledFlipCard>{frontContent}</StyledFlipCard>
-      <StyledFlipCard>{backContent}</StyledFlipCard>
+    <StyledFlipCard>
+      <div>{formattedDate}</div>
+      <StyledText>Today's Workout</StyledText>
+      <Card />
     </StyledFlipCard>
   );
-};
+}
 
-export default FlipCard;
+export default FlipCards;
