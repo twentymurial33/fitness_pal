@@ -30,6 +30,7 @@
     "node": ">=18"
   },
   "devDependencies": {
+    "@testing-library/react": "^14.2.1",
     "@types/bcrypt": "^5.0.2"
   }
 }

@@ -1,13 +1,13 @@
 import Box from "@mui/material/Box";
 import Drawer from "@mui/material/Drawer";
 import Toolbar from "@mui/material/Toolbar";
+import Link from "next/link";
 import List from "@mui/material/List";
 import Divider from "@mui/material/Divider";
 import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
-import InboxIcon from "@mui/icons-material/MoveToInbox";
 import MailIcon from "@mui/icons-material/Mail";
 
 const drawerWidth = 240;
@@ -27,16 +27,18 @@ export default function ClippedDrawer() {
         }}
       >
         <Toolbar />
-        <Box sx={{ overflow: "auto" }} style={{ backgroundColor: "pink" }}>
+        <Box sx={{ overflow: "auto" }} style={{ backgroundColor: "#1b232e" }}>
           <List>
             {["Contact"].map((text, index) => (
               <ListItem key={text} disablePadding>
-                <ListItemButton>
-                  <ListItemIcon>
-                    {index % 2 === 0 ? <MailIcon /> : <MailIcon />}
-                  </ListItemIcon>
-                  <ListItemText primary={text} />
-                </ListItemButton>
+                <Link href="/contact">
+                  <ListItemButton>
+                    <ListItemIcon>
+                      {index % 2 === 0 ? <MailIcon /> : <MailIcon />}
+                    </ListItemIcon>
+                    <ListItemText primary={text} />
+                  </ListItemButton>
+                </Link>
               </ListItem>
             ))}
           </List>

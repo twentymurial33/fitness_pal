@@ -3,11 +3,10 @@ import ImageList from "@mui/material/ImageList";
 import ImageListItem from "@mui/material/ImageListItem";
 import { ReactTyped } from "react-typed";
 import { StyledHeader } from "../../app/training/style";
-import ImageListItemBar from "@mui/material/ImageListItemBar";
 
 export default function TitlebarBelowMasonryImageList() {
   return (
-    <div style={{ marginTop: "20px" }}>
+    <div style={{ marginTop: "10px" }}>
       <StyledHeader>
         <ReactTyped
           className="typed-text"
@@ -21,7 +20,7 @@ export default function TitlebarBelowMasonryImageList() {
       <div
         style={{
           marginLeft: "240px",
-          marginTop: "90px",
+          marginTop: "40px",
         }}
       >
         <Box>
@@ -34,7 +33,6 @@ export default function TitlebarBelowMasonryImageList() {
                   alt={item.title}
                   loading="lazy"
                 />
-                <ImageListItemBar position="below" title={item.author} />
               </ImageListItem>
             ))}
           </ImageList>
