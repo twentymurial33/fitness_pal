@@ -1,5 +1,5 @@
 import { StyledFlipCard, StyledText, StyledParagraph } from "./style";
-import Card from "../card/card";
+import RunCards from "../RunCards";
 
 function FlipCards() {
   const date = new Date();
@@ -8,7 +8,7 @@ function FlipCards() {
     <StyledFlipCard>
       <StyledText>Today's Workout</StyledText>
       <StyledParagraph>{formattedDate}</StyledParagraph>
-      <Card />
+      <RunCards />
     </StyledFlipCard>
   );
 }
