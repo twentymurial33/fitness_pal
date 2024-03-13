@@ -4,14 +4,12 @@ import {
   StyledContainer,
   FlipButton,
   StyledCardContent,
-  StyledBack,
   StyledFlipFront,
   StyledFlipInner,
 } from "./style";
 
 const RunCards = () => {
-  const cardFront = "Welcome to GFG.";
-  const cardBack = "Computer Science Portal.";
+  const cardFront = "Welcome to Fitness Pal.";
   const [isFlipped, setFlipped] = useState(false);
 
   const handleFlip = () => {
@@ -27,10 +25,6 @@ const RunCards = () => {
               <StyledCardContent>{cardFront}</StyledCardContent>
               <FlipButton onClick={handleFlip}>Flip</FlipButton>
             </StyledFlipFront>
-            <StyledBack>
-              <StyledCardContent>{cardBack}</StyledCardContent>
-              <FlipButton onClick={handleFlip}>Flip</FlipButton>
-            </StyledBack>
           </StyledFlipInner>
         </div>
       </FlipWrapper>

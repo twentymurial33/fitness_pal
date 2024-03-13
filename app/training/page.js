@@ -1,6 +1,7 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import Header from "../../components/common/Header";
+import Link from "next/link";
 import { ReactTyped } from "react-typed";
 import { StyledHeader, StyledTable } from "./style";
 
@@ -40,6 +41,11 @@ export default function Page() {
           backSpeed={60}
           loop
         />
+        <div>
+          <Link href="/">
+            <button> To Main Page </button>
+          </Link>
+        </div>
       </StyledHeader>
       <StyledTable>
         <thead>

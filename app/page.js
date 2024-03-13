@@ -9,9 +9,7 @@ export default function Page() {
     <>
       <Header />
       <Navbar />
-      <div>
-        <GymCard />
-      </div>
+      <GymCard />
       <FlipCards />
     </>
   );

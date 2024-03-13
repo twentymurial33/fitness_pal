@@ -1,12 +1,13 @@
 import Box from "@mui/material/Box";
 import ImageList from "@mui/material/ImageList";
 import ImageListItem from "@mui/material/ImageListItem";
+import Link from "next/link";
 import { ReactTyped } from "react-typed";
 import { StyledHeader } from "../../app/training/style";
 
 export default function TitlebarBelowMasonryImageList() {
   return (
-    <div style={{ marginTop: "10px" }}>
+    <div style={{ marginTop: "8px" }}>
       <StyledHeader>
         <ReactTyped
           className="typed-text"
@@ -15,12 +16,16 @@ export default function TitlebarBelowMasonryImageList() {
           backSpeed={60}
           loop
         />
+        <div>
+          <Link href="/training">
+            <button> To Training Page </button>
+          </Link>
+        </div>
       </StyledHeader>
-
       <div
         style={{
           marginLeft: "240px",
-          marginTop: "40px",
+          marginTop: "30px",
         }}
       >
         <Box>
