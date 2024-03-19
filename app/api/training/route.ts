@@ -1,4 +1,7 @@
 import { NextResponse,NextRequest } from "next/server";
+import { PrismaClient } from '@prisma/client';
+
+const prisma = new PrismaClient();
 
 export async function GET(request: NextRequest) {
   try {
@@ -34,6 +37,16 @@ export async function GET(request: NextRequest) {
   }
 }
 
+//endpoint to get many
+export async function GETActivity(request: NextRequest) {
+  const newActivities = await prisma.user.findMany({
+    where: {  },
+  });
+  return {
+    props: { newActivities },
+    revalidate: 10,
+  };
+}
 
 export async function POST(request: NextRequest) {
   try {
@@ -76,20 +89,24 @@ export async function DELETE(request: NextRequest) {
   }
 }
 
-//dont need the put request
-// export async function PUT(request: NextRequest){
-//    const newActivity = {
-//     id:1,
-//   activityKind: "someActivity",
-//   unit: "someUnit",
-//     value: 42,
-//    };
 
-//   for (var [key,value]of Object.entries()){
-//     //generate a SQL statement for the key/value formation
-//     var sql={
-//       UPDATE newActivity,SET(), WHERE id=$id 
-//     }
 
-//   }
-// }
+//Put method
+export async function PUT(request: NextRequest){
+  const newActivity = await prisma.workouts.update({
+    where: { id:"1" }, // Specify the 'where' condition to identify the row to update
+    data: {
+      name: "someActivity",
+    },
+  });
+
+  return NextResponse.json(newActivity);
+  //   // for (var [key,value]of Object.entries()){
+//   //   //generate a SQL statement for the key/value formation
+//   //   // var sql={
+//   //   //   UPDATE newActivity,SET(), WHERE id=$id 
+//   //   // }
+
+//   // }
+}
+
