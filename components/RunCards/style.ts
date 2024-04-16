@@ -20,7 +20,7 @@ export const StyledFlipInner= styled.div`
 `
 
 export const StyledFlipFront = styled.div`
-background-color: black;
+background-color: black ;
 color: green;
 `
 
