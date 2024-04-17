@@ -8,7 +8,7 @@ function TodoRacesForm() {
   }
   return (
     <form onSubmit={handleSubmit}>
-      <input type="text" placeholder="add a text" />
+      <input type="text" placeholder="add a new race" />
     </form>
   );
 }

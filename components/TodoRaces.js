@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import Header from "../components/common/Header";
+import { StyledHeader } from "./styled";
 import TodoRacesForm from "./TodoRacesForm";
 
 function TodoRaces() {
@@ -11,9 +13,12 @@ function TodoRaces() {
   ]);
   return (
     <div>
+      <Header />
+      <StyledHeader>Lift of all 2024 Races</StyledHeader>
       {races.map((race) => (
         <li>{race.name}</li>
       ))}
+      <StyledHeader>Updated schedule per completion</StyledHeader>
       <TodoRacesForm />
     </div>
   );

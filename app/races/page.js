@@ -1,3 +1,5 @@
+"use client";
+
 import TodoRaces from "../../components/TodoRaces";
 
 function Races() {
